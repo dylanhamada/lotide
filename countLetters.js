@@ -37,6 +37,7 @@ const letterCountOne = {
   d: 1
 };
 
-assertEqual(letterCountOne.r, countLetters("roses are red").r);
-assertEqual(letterCountOne.e, countLetters("roses are red").e);
-assertEqual(letterCountOne.d, countLetters("roses are red").d);
+const result = countLetters("roses are red");
+assertEqual(letterCountOne.r, result.r);
+assertEqual(letterCountOne.e, result.e);
+assertEqual(letterCountOne.d, result.d);
