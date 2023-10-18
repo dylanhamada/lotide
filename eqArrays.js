@@ -9,21 +9,19 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = (arr1, arr2) => {
-  // new equal variable as placeholder for whether arrays are equal
-  let equal = true;
-  // if arrays are different lengths, equal = false
+  // if arrays are different lengths, return false
   if (arr1.length !== arr2.length) {
-    equal = false;
+    return false;
   }
   // forEach arr1, check if current elements in both arrays are strictly equal
   arr1.forEach((element, index) => {
     // if not strictly equal, equal variable set to false
     if (element !== arr2[index]) {
-      equal = false;
+      return false;
     }
   });
   // return equal variable
-  return equal;
+  return true;
 };
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
