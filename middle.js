@@ -25,22 +25,14 @@ const assertArraysEqual = (arr1, arr2) => {
 };
 
 const middle = (arr) => {
-  // placeholder array variable
-  const returnArr = [];
-  // if array length is 1-2
-  if (arr.length < 3) return returnArr;
-  // if array length is odd
+  // if array length is 1-2, return empty array
+  if (arr.length < 3) return [];
+  // if array length is odd, return array consisting of one middle element
   if (arr.length % 2 !== 0) {
-    // push one middle element into returnArr
-    returnArr.push(arr[((arr.length + 1) / 2) - 1]);
-    return returnArr;
+    return [arr[((arr.length + 1) / 2) - 1]];
   }
-  // if array length is even
-  if (arr.length % 2 === 0) {
-    // push two middle elements into returnArr
-    returnArr.push(arr[(arr.length / 2) - 1], arr[arr.length / 2]);
-    return returnArr;
-  }
+  // otherwise, array length is even, return array consisting of two middle elements
+  return [arr[(arr.length / 2) - 1], arr[arr.length / 2]];
 };
 
 assertArraysEqual([50, 60], middle([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]));
