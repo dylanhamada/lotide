@@ -1,19 +1,15 @@
 const eqArrays = (arr1, arr2) => {
-  // new equal variable as placeholder for whether arrays are equal
-  let equal = true;
-  // if arrays are different lengths, equal = false
+  // if arrays are different lengths, return false
   if (arr1.length !== arr2.length) {
-    equal = false;
+    return false;
   }
-  // forEach arr1, check if current elements in both arrays are strictly equal
-  arr1.forEach((element, index) => {
-    // if not strictly equal, equal variable set to false
-    if (element !== arr2[index]) {
-      equal = false;
-    }
-  });
+  // for loop arr1, check if current elements in both arrays are strictly equal
+  for (let i = 0; i < arr1.length; i++) {
+      // if not strictly equal, return false
+      if (arr1[i] !== arr2[i]) return false;
+  }
   // return equal variable
-  return equal;
+  return true;
 };
 
 const assertArraysEqual = (arr1, arr2) => {
