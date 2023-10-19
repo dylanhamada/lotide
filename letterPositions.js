@@ -31,12 +31,9 @@ const letterPositions = function(sentence) {
       // if current element is not in results, add it with an empty array
       if (!results[sentence[i]]) {
         results[sentence[i]] = [];
-        // push index into current element property in results
-        results[sentence[i]].push(i);
-      } else {
-        // if current element is in results, push index into current element property in results
-        results[sentence[i]].push(i);
-      }
+      } 
+      // push index into current element property in results
+      results[sentence[i]].push(i);
     } 
   }
   // return results
