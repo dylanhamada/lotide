@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
 };
 
 // TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual("Lighthouse Labs", "Lighthouse Labs");
-assertEqual(1, 1);
-assertEqual(1, 10);
+assertObjectsEqual("Lighthouse Labs", "Bootcamp");
+assertObjectsEqual("Lighthouse Labs", "Lighthouse Labs");
+assertObjectsEqual(1, 1);
+assertObjectsEqual(1, 10);

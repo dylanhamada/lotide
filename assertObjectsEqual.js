@@ -1,15 +1,3 @@
-const assertEqual = function(actual, expected) {
-  // if actual value does not match expected value, print assertion failed message
-  if (actual !== expected) {
-    console.log(`🛑🛑🛑 Assertion Failed: [${actual}] !== [${expected}]`);
-    return;
-  }
-
-  // otherwise, assume assertion passed and print that
-  console.log(`✅✅✅ Assertion Passed: [${actual}] === [${expected}]`);
-  return;
-};
-
 const eqArrays = (arr1, arr2) => {
   // if arrays are different lengths, return false
   if (arr1.length !== arr2.length) {
@@ -50,16 +38,29 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+// FUNCTION IMPLEMENTATION
+const assertObjectsEqual = function(obj1, obj2) {
+  const inspect = require('util').inspect; // <= add this line
+  
+  if (!eqObjects(obj1, obj2)) {
+    console.log(`🛑🛑🛑 Assertion Failed: [${inspect(obj1)}] !== [${inspect(obj2)}]`);
+    return;
+  }
+
+  console.log(`✅✅✅ Assertion Passed: [${inspect(obj1)}] === [${inspect(obj2)}]`);
+  return;
+};
+
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
-assertObjectsEqual(eqObjects(shirtObject , anotherShirtObject), true); // => true
+assertObjectsEqual(shirtObject , anotherShirtObject); // => true
 
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-assertObjectsEqual(eqObjects(shirtObject , longSleeveShirtObject), false); // => false
+assertObjectsEqual(shirtObject , longSleeveShirtObject); // => false
 
 const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-assertObjectsEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), true); // => true
+assertObjectsEqual(multiColorShirtObject, anotherMultiColorShirtObject); // => true
 
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-assertObjectsEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false); // => false
+assertObjectsEqual(multiColorShirtObject, longSleeveMultiColorShirtObject); // => false
