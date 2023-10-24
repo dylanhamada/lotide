@@ -10,8 +10,4 @@ const assertEqual = function(actual, expected) {
   return;
 };
 
-// TEST CODE
-assertObjectsEqual("Lighthouse Labs", "Bootcamp");
-assertObjectsEqual("Lighthouse Labs", "Lighthouse Labs");
-assertObjectsEqual(1, 1);
-assertObjectsEqual(1, 10);
+module.exports = assertEqual;
