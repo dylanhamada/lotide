@@ -38,3 +38,5 @@ assertArraysEqual(["Dudley", "Dumbledore", "Draco", "Daria", "Dolly"], map(["dud
 
 // test is map succesffully converts all elements that are strings into numbers
 assertArraysEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], map([1, "2", 3, "4", 5, "6", 7, "8", 9, "10"], num => Number(num)));
+
+module.exports = map;

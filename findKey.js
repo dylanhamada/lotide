@@ -56,3 +56,5 @@ const championships = {
 
 // findKey where the callback finds the first property whose value is an empty array
 assertEqual(findKey(championships, x => x.length === 0), "Scary Raiders");
+
+module.exports = findKey;
