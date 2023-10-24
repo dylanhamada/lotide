@@ -8,9 +8,7 @@ describe("#tail", () => {
   it("returns [Lighthouse, Labs] for [Yo Yo, Lighthouse, Labs]", () => {
     assert.deepEqual(tail(words), ["Lighthouse", "Labs"]);
   });
-});
-
-describe("#tail", () => {
+  
   it("returns [3, 6, 9, 12] for [2, 3, 6, 9, 12]", () => {
     assert.deepEqual(tail(nums), [3, 6, 9, 12]);
   });
