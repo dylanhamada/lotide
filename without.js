@@ -46,3 +46,5 @@ assertArraysEqual(["Bo", "de", "ga"], without(["Boo", 25, "de", 190, "ga"],[25, 
 
 console.log(eqArrays(["Bo", "de"], ["Boo", "de"]));
 console.log(eqArrays([1, 2], [1, 3]));
+
+module.exports = without;

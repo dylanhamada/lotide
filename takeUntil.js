@@ -54,3 +54,5 @@ assertArraysEqual([7, 9, 15, 93, 45, 77], takeUntil([7, 9, 15, 93, 45, 77, 26, 5
 console.log('---');
 
 assertArraysEqual(["Hello", 666, "Time Bomb", 999], takeUntil(["Hello", 666, "Time Bomb", 999, false, "I\'m", 808, "Ready"], x => typeof x === "boolean"));
+
+module.exports = takeUntil;
