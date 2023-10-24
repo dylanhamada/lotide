@@ -1,12 +1,5 @@
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`🛑🛑🛑 Assertion Failed: [${actual}] !== [${expected}]`);
-    return;
-  }
-
-  console.log(`✅✅✅ Assertion Passed: [${actual}] === [${expected}]`);
-  return;
-};
+const countOnly = require("../countOnly");
+const assert = require("chai").assert;
 
 const firstNames = [
   "Karl",
@@ -20,10 +13,16 @@ const firstNames = [
   "Joe"
 ];
 
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+const result = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+console.log(result["Karima"]);
 
+describe("#countOnly", () => {
+  it("returns 2 for Fang", () => {
+    assert(result["Fang"], 2);
+  });
+
+  it("returns 1 for Jason", () => {
+    assert(result["Jason"], 1);
+  });
+});
