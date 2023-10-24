@@ -1,6 +1,6 @@
 const eqArrays = require('../eqArrays');
-const assertObjectsEqual = require('../assertObjectsEqual');
+const assertArraysEqual = require('../assertArraysEqual');
 
-assertObjectsEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertObjectsEqual(eqArrays([1, 2, 3], [4, 3, 2, 1, 0]), false);
-assertObjectsEqual(eqArrays([], []), true);
+assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+assertArraysEqual(eqArrays([1, 2, 3], [4, 3, 2, 1, 0]), false);
+assertArraysEqual(eqArrays([], []), true);
